@@ -19,6 +19,8 @@
                 return $this->query($sql);
             }
             $stmt = $this->prepare($sql);
+            $stmt->execute($args);
+            $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
 
