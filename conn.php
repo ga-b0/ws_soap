@@ -15,13 +15,13 @@
 
 
         public function run($sql, $args = null){
-            if($args){
+            if(!$args){
                 return $this->query($sql);
             }
             $stmt = $this->prepare($sql);
             $stmt->execute($args);
-            $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $stmt;
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         }
 
 
