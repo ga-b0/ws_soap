@@ -20,8 +20,8 @@
             }
             $stmt = $this->prepare($sql);
             $stmt->execute($args);
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+            $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt;
         }
 
 
